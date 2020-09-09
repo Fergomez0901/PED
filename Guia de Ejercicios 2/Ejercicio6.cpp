@@ -21,7 +21,7 @@ int sumaN(int n)
     }
     else
     {
-        return(sumaN(n-1)+n)
+        return(sumaN(n-1)+n);
     }
     
 }
