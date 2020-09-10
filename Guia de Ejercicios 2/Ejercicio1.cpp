@@ -33,8 +33,6 @@ int main()
 
     float promedio = calcPromedio(n, estudiante.notas);
 
-    string estado; 
-
     estudiante.estado = verificarPromedio(promedio);
 
     imprimirStruct(estudiante.nombre, estudiante.apellido, estudiante.estado, estudiante.notas, promedio, n);

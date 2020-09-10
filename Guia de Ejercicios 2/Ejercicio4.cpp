@@ -16,7 +16,7 @@ int main ()
 
 int raizDigital(int num )
 {
-    int aux, suma = 0; 
+    int suma = 0; 
     if(num <= 9)
     {
         return num; 

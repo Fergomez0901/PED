@@ -13,7 +13,7 @@ void ingresarDatos(int, Estudiante[]);
 float *ingresarNotas(int);
 float calcPromedio(int, float*);
 int encontrarMayor(int, float*);
-void devolverEstudiante(int pos, Estudiante[]);
+void devolverEstudiante(int, Estudiante[]);
 
 int main()
 {
@@ -63,7 +63,6 @@ void ingresarDatos(int n, Estudiante *estudiantes)
 
         cout << "Ingrese el apellido del estudinte: " << endl; 
         cin >> estudiantes[i].apellido;
-        
     }
 }
 

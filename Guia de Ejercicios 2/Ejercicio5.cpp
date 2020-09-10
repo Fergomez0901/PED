@@ -5,7 +5,7 @@ int MCD(int, int);
 
 int main()
 {
-    int mayor = 0, menor = 0, resultado = 0; 
+    int mayor = 0, menor = 0; 
 
     cout << "Ingrese el valor del numero mayor: ";
     cin >> mayor; 
