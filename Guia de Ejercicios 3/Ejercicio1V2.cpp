@@ -7,7 +7,7 @@ void showStack(stack<int> s)
     stack<int> clone = s; 
     bool isEmpty = false; 
 
-    while (!isEmpty)
+    while(!isEmpty)
     {
         if(!clone.empty())
         {

@@ -50,12 +50,13 @@ void findBP(Stack *s, string title)
     if((*s)->title == title)
     {
         cout << "Tiene " << (*s)->numPages << endl; 
+        return; 
     }
     else
     {
         pop(s);
         findBP(s, title);
-    }  
+    }
 }
 
 int main()
