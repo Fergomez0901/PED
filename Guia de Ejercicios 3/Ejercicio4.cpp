@@ -21,7 +21,7 @@ bool empty(Stack *s)
 void push(Stack *s, int e)
 {
     struct Node *node; 
-    node = (struct Node *)malloc(sizeof(struct Node));
+    node = new Node; 
     node -> element = e; 
     node -> next = *s;
 

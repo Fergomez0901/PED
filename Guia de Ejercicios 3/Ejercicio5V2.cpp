@@ -23,7 +23,7 @@ bool empty(Stack *s)
 void push(Stack *s, string titulo, int numPags)
 {
     struct Libro *nodo;
-    nodo = (struct Libro *)malloc(sizeof(struct Libro)); 
+    nodo = new Libro;
     nodo->titulo = titulo;
     nodo->numPags = numPags; 
     nodo->siguiente = *s;
@@ -49,7 +49,7 @@ void encontrarLibro(Stack *s, string titulo)
 {
     if((*s)->titulo == titulo)
     {
-        cout << "El libro tiene: " << (*s)->numPags << " paginas" << endl; 
+        cout << "El libro tiene " << (*s)->numPags << " paginas" << endl; 
         return; 
     }
     else

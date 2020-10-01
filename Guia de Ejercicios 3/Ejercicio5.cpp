@@ -23,7 +23,7 @@ bool empty(Stack *s)
 void push(Stack *s, string title, int numPags)
 {
     struct Book *node; 
-    node = (struct Book *)malloc(sizeof(struct Book));
+    node = new Book;
     node->title = title; 
     node->numPages = numPags; 
     node->next = *s;
