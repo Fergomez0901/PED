@@ -11,8 +11,8 @@ struct Pairs pairs;
 
 void showQ(queue<Pairs> pairsQ){
     queue<Pairs> clone = pairsQ; 
-    while(!clone.epmty()){
-        cout << "[" << clone.front().num1 << "," << clonoe.front().num2;  << "]" << endl; 
+    while(!clone.empty()){
+        cout << "[" << clone.front().num1 << "," << clone.front().num2 << "]" << endl; 
         clone.pop(); 
     }
 }
