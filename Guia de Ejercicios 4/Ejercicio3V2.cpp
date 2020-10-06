@@ -49,29 +49,88 @@ void pop(queue *q){
     delete(newNode);
 }
 
-void searchChar(queue q, char c){
-    queue clone = q; 
+void showQueue(queue *q){
+    node *aux = q->front; 
+    if(empty(q)){
+        cout << "La cola esta vacia" << endl; 
+    }else{
+        while(aux){
+            cout << aux->element << " ";
+            aux = aux->next; 
+        }
+    }
+}
+
+void searchChar(queue *q, char c){          //Hay un error, creo
+    queue *clone = q;
     bool found = false; 
-    while(!empty(&clone){
-        if(clone->front == c){
+    while(!empty(clone))
+    {
+        if(clone->front->element == c)
+        {
             found = true; 
-            cout << "Se encontro el caracter, borrando cola..." << endl; 
+            cout << "Se encontro el caracter" << endl << "Borrando cola..." << endl; 
             pop(clone);
-            while(!empty(q)){
+            while(!empty(q))
+            {
                 pop(q);
             }
             cout << "Mostrando cola vacia: " << endl; 
-            showQ(charQ); // falta
-        }
-        else{
-            pop(clone); 
+            showQueue(q);
+        }else{
+            pop(clone);
         }
     }
-    if(!found)
-    {
-        cout << "No se encontro el caractrer" << endl;
-        cout << "Mostrando cola..." << endl;
-        showQ(charQ); // falta 
+    if(!found){
+        cout << "No se encontro el caracter." << endl; 
+        cout << "Mostrando cola..." << endl; 
+        showQueue(q);
     }
+}
+
+void menu(queue *q){
+    int option;
+    bool status = true;
+    while(status) {
+        cout << "\n" << "***** MENU DE COLAS *****" << endl;
+        cout << "1. Ingresar un caracter a la cola" << endl;
+        cout << "2. Buscar un caracter y vaciar" << endl;
+        cout << "3. Salir del programa" << endl;
+        
+        
+        cout << "\n" << "Ingrese la opcion que desea ejecutar: ";
+        cin >> option;
+
+        switch(option) {
+            case 1:
+                char c; 
+                cout << "Ingrese el caracter que desea agregar a la cola: ";
+                cin >> c; 
+                push(q, c);
+                break;
+
+            case 2:
+                char cS; 
+                cout << "Ingrese el caracter que desea buscar dentro de la cola: ";
+                cin >> cS; 
+                searchChar(q, cS);
+                break;
+
+            case 3:
+                cout << "Fin del programa" << endl; 
+                status = false; 
+                break;
+
+            default:
+                cout << "Opcion Invalida" << endl;
+                break;
+        }
+    }
+}
+
+int main(){
+    queue charQ; 
+    initialize(&charQ);
+    menu(&charQ);
 }
 
