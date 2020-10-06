@@ -144,8 +144,8 @@ void menu(Stack *s){
             default: 
                 cout <<"Opcion invalida" << endl; 
                 break;
-    } 
-}
+        } 
+    }
 }
 
 int main(){

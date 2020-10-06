@@ -111,8 +111,96 @@ void limpiarPlatos(Stack *clean, Stack *dirty, int n){
     }
 }
 
+void showStack(Stack *s){
+    struct Node *clone = *s;
+    bool isEmpty = false; 
+
+    while(!isEmpty){
+        if(!empty(&clone)){
+            cout << "Material: " << clone->element.material << endl; 
+            cout << "Color: " << clone->element.color << endl;
+            string estado = clone->element.estado ? "Limpio" : "Sucio"; 
+            cout << "Estado: " << estado << endl;
+            cout << endl; 
+            clone = clone->next; 
+        }else{
+            isEmpty = true; 
+        }
+    }
+    cout << endl; 
+}
+
+void menu(Stack *clean, Stack *dirty){
+    int opcion; 
+    bool estado = true;
+
+    while(estado){
+        cout << "***** Menu *****" << endl; 
+        cout << "1) Ensuciar un (1) plato" << endl; 
+        cout << "2) Ensuciar N platos" << endl; 
+        cout << "3) Limpiar un (1) plato" << endl; 
+        cout << "4) Limpiar N platos" << endl; 
+        cout << "5) Mostrar pila limpia" << endl; 
+        cout << "6) Mostrar pila sucia" << endl;
+        cout << "7) Salir del programa" << endl; 
+
+        cout << endl << "Ingrese una opcion: ";
+        cin >> opcion; 
+        cin.ignore(); 
+
+        switch (opcion)
+        {
+        case 1:
+            ensuciarPlato(clean, dirty, 1);
+            break;
+
+        case 2: 
+            int n; 
+            cout << "Ingrese la cantidad de platos a ensuciar: ";
+            cin >> n; 
+            ensuciarPlato(clean, dirty, n);
+            break; 
+
+        case 3: 
+            limpiarPlatos(clean, dirty, 1);
+            break;
+        
+        case 4: 
+            int x; 
+            cout << "Ingrese la cantidad de platos a limpiar: ";
+            cin >> x;
+            limpiarPlatos(clean, dirty, x);
+            break; 
+
+        case 5: 
+            cout << "Mostrando pila limpia" << endl; 
+            showStack(clean);
+            break; 
+
+        case 6: 
+            cout << "Mostrando pila sucia" << endl; 
+            showStack(dirty);
+            break;
+
+        case 7:
+            cout << "Fin del programa" << endl; 
+            estado = false; 
+            break; 
+        
+        default:
+            cout << "Opcion Invalida" << endl; 
+            break;
+        }
+    }
+}
+
 int main(){
     Stack clean, dirty; 
     initialize(&clean);
     initialize(&dirty);
+
+    llenarPilaInicial(&clean);
+    menu(&clean, &dirty);
+
+    return 0; 
 }
