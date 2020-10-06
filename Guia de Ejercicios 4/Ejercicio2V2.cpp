@@ -44,14 +44,12 @@ void pop(queue *q){
         cout << "Underflow" << endl; 
         return; 
     }
-
     client *newClient = q->front;
     q->front = newClient->next; 
 
     if(q->front == NULL){
         q->back == NULL;
     }
-
     delete(newClient);
 }
 
@@ -82,7 +80,7 @@ void menu(queue *q){
         cout << "3. Salir del programa" << endl;
         
         
-        cout << "\n" << "Ingrese la opción que desea ejecutar: ";
+        cout << "\n" << "Ingrese la opcion que desea ejecutar: ";
         cin >> option;
 
         switch(option) {

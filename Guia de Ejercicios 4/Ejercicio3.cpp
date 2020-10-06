@@ -17,12 +17,12 @@ void searchChar(queue<char> charQ, char c){
     while(!clone.empty()){
         if(clone.front() == c){
             found = true; 
-            cout << "Se encontró el caracter, borrando cola..." << endl; 
+            cout << "Se encontro el caracter, borrando cola..." << endl; 
             clone.pop();
             while(!charQ.empty()){
                 charQ.pop();
             }
-            cout << "Mostrandocola vacia: " << endl; 
+            cout << "Mostrando cola vacia: " << endl; 
             showQ(charQ);
         }
         else{
@@ -47,7 +47,7 @@ void menu(queue<char> charQ){
         cout << "3. Salir del programa" << endl;
         
         
-        cout << "\n" << "Ingrese la opción que desea ejecutar: ";
+        cout << "\n" << "Ingrese la opcion que desea ejecutar: ";
         cin >> option;
 
         switch(option) {

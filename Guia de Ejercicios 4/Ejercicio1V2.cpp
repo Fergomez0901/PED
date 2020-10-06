@@ -88,8 +88,6 @@ void menu(queue *q)
                 cout << "Ingrese un numero a la cola: ";
                 cin >> e; 
                 push(q, e);
-                cout << "Mostrando cola actualizada" << endl;
-                showQueue(q);
                 break; 
 
             case 2: 
@@ -110,4 +108,10 @@ void menu(queue *q)
                 break;
         } 
     }
+}
+
+int main(){
+    queue q;
+    initialize(&q);
+    menu(&q);
 }

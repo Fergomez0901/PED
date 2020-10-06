@@ -7,7 +7,7 @@ void showQueue(queue<int> q)
     queue<int> clone = q; 
     while(!clone.empty())
     {
-        cout << clone.front() << endl; 
+        cout << clone.front() << " "; 
         clone.pop(); 
     }
 }
@@ -33,7 +33,7 @@ void menu(queue<int> q)
             case 1: 
                 int element;
 
-                cout << "Ingrese el elemento a añadir a la cola: " << endl; 
+                cout << "Ingrese el elemento a agregar a la cola: " << endl; 
                 cin >> element; 
 
                 q.push(element);
