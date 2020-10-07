@@ -61,7 +61,7 @@ void showQueue(queue *q){
     }
 }
 
-void searchChar(queue *q, char c){          //Hay un error, creo
+void searchChar(queue *q, char c){          
     queue *clone = q;
     bool found = false; 
     while(!empty(clone))

@@ -47,7 +47,7 @@ void menu(queue<Student> studentQ){
         cout << "4. Salir del programa" << endl;
         
         
-        cout << "\n" << "Ingrese la opción que desea ejecutar: ";
+        cout << "\n" << "Ingrese la opcion que desea ejecutar: ";
         cin >> option;
 
         switch(option) {
@@ -87,7 +87,6 @@ void menu(queue<Student> studentQ){
 
 int main(){
     queue<Student> studentQ;
-
     menu(studentQ);
-
+    return 0; 
 }
