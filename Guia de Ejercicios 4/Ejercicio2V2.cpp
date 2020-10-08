@@ -79,7 +79,6 @@ void menu(queue *q){
         cout << "2. Cobrar" << endl;
         cout << "3. Salir del programa" << endl;
         
-        
         cout << "\n" << "Ingrese la opcion que desea ejecutar: ";
         cin >> option;
 
