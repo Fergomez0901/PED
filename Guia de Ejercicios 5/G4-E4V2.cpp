@@ -58,7 +58,6 @@ void pop(queue *q)
     delete(aux);
 }
 
-
 void showQueue(queue *q)
 {
     queue *clone = q;

@@ -26,6 +26,7 @@ bool empty(queue *q)
 
 void push(queue *q, int e){
     Node *newNode;
+    newNode = new Node; 
     newNode->element = e;
     newNode->next = NULL; 
 
@@ -79,7 +80,6 @@ void evenOdd(queue *n, queue *e, queue *o)
         }
         pop(n); 
     }
-
     showQueue(e);
     showQueue(o);
 }

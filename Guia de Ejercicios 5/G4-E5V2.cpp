@@ -126,3 +126,10 @@ void menu(queue *q){
         }
     }
 }
+
+int main()
+{
+    queue students; 
+    initialize(&students);
+    menu(&students);
+}
