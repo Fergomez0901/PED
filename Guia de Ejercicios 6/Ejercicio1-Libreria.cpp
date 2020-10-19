@@ -37,7 +37,9 @@ void addPerson()
                 cout << "Ingrese el correo electronico: ";
                 getline(cin, person.mail);
                 cout << "Ingrese el numero de carnet: ";
-                cin >> person.id; 
+                cin >> person.id;
+                cout << "Ingrese el numero de telefono: ";
+                cin >> person.phone;
                 list.insert(list.begin(), person);
                 cout << "Persona agregada exitosamente!\n"; 
                 break;
@@ -50,7 +52,9 @@ void addPerson()
                 getline(cin, person.mail);
                 cout << "Ingrese el numero de carnet: ";
                 cin >> person.id; 
+                cout << "Ingrese el numero de telefono: ";
                 list.insert(list.end(), person);
+                cin >> person.phone;
                 cout << "Persona agregada exitosamente!\n"; 
                 break;
             case 3: 
@@ -115,6 +119,26 @@ void showList()
     }
 }
 
+void editInfo()
+{
+    int id; 
+    cout << "Ingrese el numero de carnet de la persona que desea editar: ";   cin >> id; cin.ignore();
+    for(int i = 0; i < list.size(); i++)
+    {
+        if(list.at(i).id == id)
+        {
+            cout << "Actualizando datos..." << endl;
+            cout << "Ingrese el nombre: "; getline(cin, list.at(i).name);
+            cout << "Ingrese el apellido: "; getline(cin, list.at(i).last);
+            cout << "Ingrese el correo electronico: "; getline(cin, list.at(i).mail);
+            cout << "Ingrese el numero de carnet: "; cin >> list.at(i).id;
+            cout << "Ingrese el numero de telefono: "; cin >> list.at(i).phone; 
+            
+            cout << endl << "Datos actualizados con exito!" << endl << endl; 
+        }
+    }
+}
+
 void menu()
 {
     int option; 
@@ -133,29 +157,18 @@ void menu()
 
         switch(option)
         {
-            case 1: 
-                addPerson(); 
-                break; 
-            case 2:
-                deletePerson();
-                break; 
-            case 3:
-                break; 
-            case 4: 
-                showList();
-                break; 
-            case 5: 
-                status = false; 
-                cout << "Fin del programa" << endl; 
-                break; 
-            case 6: 
-                cout << "Opcion invalida. Intentalo de nuevo. " << endl; 
-                break; 
+            case 1: addPerson(); break; 
+            case 2: deletePerson(); break; 
+            case 3: editInfo(); break; 
+            case 4: showList(); break; 
+            case 5: status = false; cout << "Fin del programa" << endl; break; 
+            default: cout << "Opcion invalida. Intentalo de nuevo. " << endl; break; 
         }
     }
 }
 
-int main(){
+int main()
+{
     menu();
     return 0; 
 }

@@ -94,7 +94,8 @@ void menu()
         cout << "1) Ingresar elementos a la lista" << endl; 
         cout << "2) Mostrar todos los elementos" << endl; 
         cout << "3) Mostrar solo los elementos pares" << endl; 
-        cout << "4) Mostrar solo los elementos impares" << endl; 
+        cout << "4) Mostrar solo los elementos impares" << endl;
+        cout << "5) Salir del programa" << endl; 
         cout << endl << "Ingrese una opcion: "; cin >> option; 
 
         switch(option)
@@ -103,6 +104,7 @@ void menu()
             case 2: showAllNumbers(); break; 
             case 3: showEven(); break; 
             case 4: showOdd(); break; 
+            case 5: cout << "Fin del programa\n\n"; status = false; break;
             default: cout << "Opcion invalida. Intentalo de nuevo."<< endl; break; 
         }
     }
