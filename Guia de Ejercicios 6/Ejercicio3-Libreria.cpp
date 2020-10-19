@@ -84,9 +84,8 @@ void distribute()
     {
         for (int i = 0; i < books.size(); i++)
         {
-            cout 
+            
         }
-        
     }
 }
 
