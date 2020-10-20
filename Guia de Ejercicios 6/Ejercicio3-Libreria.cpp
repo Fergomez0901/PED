@@ -82,16 +82,23 @@ void addStudent()
 
 bool canAssing(Student student)
 {
-    return(student.revista == NULL && student.libro == NULL);
+    if(student.libro == NULL && student.revista == NULL)
+    {
+        return true; 
+    }
+    else
+    {
+        return false; 
+    }
 }
 
-void assingBook(int carnet, Book *libro)
+bool assingBook(int carnet, Book *libro)
 {
     bool assigned = false; 
     if(students.empty())
     {
         cout << "No se puede asignar un libro. La lista de estudiantes esta vacia" << endl << endl;
-        return;  
+        return assigned;  
     }
     else
     {
@@ -115,16 +122,21 @@ void assingBook(int carnet, Book *libro)
                 }
             }
         }
+        if(found == false)
+        {
+            cout << "El carnet ingresado no pertenece a ningun estudiante" << endl; 
+        }
+        return assigned; 
     } 
 }
 
-void assignMagazine(int carnet, Magazine *mag)
+bool assignMagazine(int carnet, Magazine *mag)
 {
     bool assigned = false; 
     if(students.empty())
     {
         cout << "No se puede asignar una revista.La lista de estudiantes esta vacia" << endl << endl; 
-        return; 
+        return assigned; 
     }
     else
     {
@@ -145,9 +157,13 @@ void assignMagazine(int carnet, Magazine *mag)
                 {
                     cout << "No se puede asignar una revista. El estudiante ya tiene asignado un libro o revista" << endl << endl; 
                 }
-                
             }
         }
+        if(found == false)
+        {
+            cout << "El carnet ingresado no le pertenece a ningun estudiante" << endl; 
+        }
+        return assigned; 
     }
 }
 
