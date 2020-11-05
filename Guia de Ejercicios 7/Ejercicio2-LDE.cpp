@@ -9,7 +9,7 @@ void agregarNumero(list<int> num)
     int n; 
     while(opcion == 's')
     {
-        cout << "Ingrese un numero entero: "; cin >> n; 
+        cout << "Ingrese un numero entero entre 1 y 100 : "; cin >> n; 
         cout << endl << "Desea agregar otro numero? (s/n): "; cin >> opcion; 
     }
 }
